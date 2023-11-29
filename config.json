@@ -1,0 +1,7 @@
+{
+  "prompt_path": "fst/prompt.txt",
+  "template_path": "fst/template.txt",
+  "api_key": "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",
+  "LM": "gpt-3.5-turbo",
+  "temperature": 0.7
+}
