@@ -2,22 +2,6 @@
 
 This project uses OpenAI's GPT-3.5 Turbo to solve mathematical word problems. It takes a set of prompts in the form of word problems, processes them using a predefined prompt structure, and provides answers based on the model's predictions.
 
-## Project Structure
-
-The project has the following file structure:
-
-.
-├── config.json # Configuration file for model parameters and file paths
-├── data
-│ └── test.jsonl # JSON Lines file containing test data with questions and answers
-├── fst
-│ ├── prompt.txt # Text file containing the prompt used for model generation
-│ └── template.txt # Text file containing the template for formatting examples
-├── model.py # Python script defining the Model class and prediction methods
-├── utils.py # Python script with utility functions (e.g., data loading, evaluation)
-└── main.py # Python script to orchestrate model prediction, data loading, and evaluation
-
-
 ## Usage
 
 1. **Configure the Model**: Edit `config.json` to set the model parameters, API key, and file paths.
