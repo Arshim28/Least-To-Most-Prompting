@@ -1,26 +1,22 @@
 import json
 from model import Model
-from utils import load_data, evaluate
+from utils import load_data
 
 def main():
     model_config_path = "config.json"
     model = Model(model_config_path)
 
-    existing_answers_path = "output/answers.json"
-    existing_answers = load_data(existing_answers_path)
-
-    test_data_path = "data/test.jsonl"
-    test_data = load_data(test_data_path)
-
-    last_processed_index = len(existing_answers)
+    data_path = "data/test.jsonl"
+    data = load_data(data_path)
 
     answers = []
 
-    for example_dict in test_data[last_processed_index:]:
+    for example_dict in data:
         output = model.predict(example_dict)
         answers.append(output)
 
-        with open(existing_answers_path, "w") as output_file:
+        output_path = "output/answers.json"
+        with open(output_path, "w") as output_file:
             json.dump(answers, output_file, indent=2)
 
     ground_truth_path = "data/test.jsonl"
